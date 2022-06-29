@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect(
-    "mongodb+srv://mitchpaint11:<password>@cluster0.ayzondq.mongodb.net/journal?retryWrites=true&w=majority"
-  )
+  .connect(process.env.ATLAS_DB_URL)
   .then(() =>
     console.log(
       mongoose.connection.readyState == 1
